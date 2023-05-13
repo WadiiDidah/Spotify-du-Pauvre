@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE IceBoxService SYSTEM "icebox_service_1_0.dtd">
+<IceBoxService>
+  <icebox>
+    <host>machine1</host>
+    <host>machine2</host>
+    <host>machine3</host>
+    <port>4061</port>
+    <port>4062</port>
+    <port>4063</port>
+  </icebox>
+
+  <application name="MusicApp">
+    <node name="RapServerNode">
+      <server name="RapServer">
+        <adapter name="RapAdapter">
+          <endpoint host="machine1" port="10000"/>
+        </adapter>
+      </server>
+    </node>
+    
+    <node name="RnBServerNode">
+      <server name="RnBServer">
+        <adapter name="RnBAdapter">
+          <endpoint host="machine2" port="10000"/>
+        </adapter>
+      </server>
+    </node>
+    
+    <node name="RockServerNode">
+      <server name="RockServer">
+        <adapter name="RockAdapter">
+          <endpoint host="machine3" port="10000"/>
+        </adapter>
+      </server>
+    </node>
+  </application>
+</IceBoxService>
